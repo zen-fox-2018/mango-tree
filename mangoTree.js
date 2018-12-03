@@ -1,7 +1,7 @@
 
-const mangoTree = require("./fruit_tree")
+const FruitTree = require("./fruit_tree")
 
-class MangoTree extends mangoTree {
+class MangoTree extends FruitTree {
     constructor() {
         super()
         this._name = "Mango"
@@ -17,7 +17,7 @@ class MangoTree extends mangoTree {
         return this._fruits
       }
 }
-class Mango extends mangoTree{
+class Mango extends FruitTree{
 }
 
 module.exports = MangoTree
