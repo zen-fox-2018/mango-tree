@@ -20,7 +20,7 @@ class MangoTree {
   set age(num) {
     this._age += num
   }
-  get ageHaha() {
+  get age() {
     return this._age
   }
 
