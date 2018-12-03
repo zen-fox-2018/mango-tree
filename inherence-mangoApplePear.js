@@ -39,6 +39,7 @@ class FruitTree {
   }
   set height(input) {
     if (this.age < this.oldAge) {
+      input = Math.floor(Math.random() * input);
       this._height += Number(input);
     }
     return this._height;
@@ -46,7 +47,7 @@ class FruitTree {
 
   grow() {
     this.age = 1;
-    this.height = 2;
+    this.height = this.growingHeight;
 
     if (this._age % this.matureAge === 0) {
       this._harvested = this.harvest();
@@ -101,58 +102,42 @@ class Fruit {
 class MangoTree extends FruitTree {
   constructor() {
     super();
-    this.height = this.growHeight();
+    this.growingHeight = 5;
     this.oldAge = 20;
     this.matureAge = 1;
     this.dyingAge = 25;
     this.typeOfFruit = 'mango';
     
   }
-
-  growHeight (){
-    let randomHeight = Math.floor(Math.random() * 5);
-    return randomHeight;
-  }
 }
-
 
 class AppleTree extends FruitTree {
   constructor() {
     super();
-    this.height = this.growHeight();
+    this.growingHeight = 3;
     this.oldAge = 17;
     this.matureAge = 2;
     this.dyingAge = 21;
     this.typeOfFruit = 'apple';
     
   }
-
-  growHeight (){
-    let randomHeight = Math.floor(Math.random() * 3);
-    return randomHeight;
-  }
 }
 
 class PearTree extends FruitTree {
   constructor() {
     super();
-    this.height = this.growHeight();
+    this.growingHeight = 7;
     this.oldAge = 15;
     this.matureAge = 2;
     this.dyingAge = 25;
     this.typeOfFruit = 'pear';
     
   }
-
-  growHeight (){
-    let randomHeight = Math.floor(Math.random() * 7);
-    return randomHeight;
-  }
 }
 
 
 console.log('The tree is alive! :)');
-let tree = new MangoTree()
+let tree = new PearTree()
 do {
   tree.grow();
   tree.produceFruits();
