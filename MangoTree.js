@@ -4,6 +4,7 @@ const Fruit = require('./Fruit')
 class MangoTree extends FruitTree {
   constructor(){
     super()
+    this.name = 'mango'
     this._mature  = 3
     this._maxHeightAge = 6
     this._maxHeight = 5

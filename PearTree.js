@@ -4,6 +4,7 @@ const Fruit = require('./Fruit')
 class PearTree extends FruitTree {
   constructor(){
     super()
+    this.name = 'pear'
     this._mature  = 2
     this._maxHeightAge = 5
     this._maxHeight = 2
@@ -22,5 +23,5 @@ class PearTree extends FruitTree {
 }
 
 class Pear extends Fruit {}
-
+//buat factory
 module.exports = PearTree

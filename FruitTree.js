@@ -1,8 +1,9 @@
 "use strict"
 const Fruit = require('./Fruit')
-
+// const Pear = require('./Pear')
 class FruitTree {
   constructor () {
+    this.name = 'fruit'
     this._age = 0
     this._height = 0 
     this._fruits = []
@@ -63,6 +64,23 @@ class FruitTree {
         this._fruits.push(new Fruit())  
       }
     } 
+
+    //Factory method
+    // let buah = new Fruit()
+    // if (this.name == 'mango') {
+    //   buah = new Mango()
+    // } else if (this.name == 'apple') {
+    //   buah = new Apple()
+    // } else if (this.name == 'pear') {
+    //   buah = new Pear()
+    // } 
+    // if (this.age >= this._mature) {
+    //   let num = Math.floor(Math.random() * 8)
+    //   for (let i = 0; i < num; i++) {      
+    //     this._fruits.push(buah)  
+    //   }
+    // } 
+
   }
 
   harvest () {
