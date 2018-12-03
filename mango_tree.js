@@ -1,9 +1,33 @@
 "use strict"
 
-// Release 0
+class FruitTree {
+  constructor (){
+    this._age = 0;
+    this._height = 0;
+    this._fruits = [];
+    this._getHealthStatus = true;
+    this._harvested = 0;
+  }
+}
+
+class Fruit {
+  constructor() {
+    this.quality = this.qualities();
+  }
+
+  qualities() {
+    let random = Math.round(Math.random());
+    if (random === 0) {
+      return 'bad';
+    } else if (random === 1) {
+      return 'good';
+    }
+  }
+}
+
+
 
 class MangoTree {
-
   // Initialize a new MangoTree
   constructor() {
     this._age = 0;
