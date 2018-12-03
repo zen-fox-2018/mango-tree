@@ -48,7 +48,7 @@ class FruitTree {
   }
 
   set fruits(fruitObj) {
-    this.fruits.push(fruitObj)
+    this._fruits.push(fruitObj)
   }
 
   set healthStatus(bool) {
