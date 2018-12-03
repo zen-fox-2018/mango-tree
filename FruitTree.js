@@ -80,7 +80,7 @@ class FruitTree {
     }
 
     for (let i = 0; i < this.fruitsCount; i++) {
-      this.fruits = new Fruit()
+      this.fruits = new Fruit() 
     }
     
   }
