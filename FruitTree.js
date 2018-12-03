@@ -1,5 +1,8 @@
 "use strict"
 const Fruit = require('./Fruit')
+const Apple = require('./Apple')
+const Mango = require('./Mango')
+const Pear = require('./Pear')
 class FruitTree {
 
   // Initialize a new MangoTree
@@ -53,8 +56,8 @@ class FruitTree {
   // Grow the tree
   grow () {
     this.age = 1
-    if(this.age > this._mature) {
-      const random =  Math.floor(Math.random() *2 +1)/2;
+    if(this.age <= this._mature) {
+      const random =  Math.floor(Math.random() *2+1)+1/2;
       this.height = random
     }
     if (this.age === this._dead) {
@@ -65,9 +68,16 @@ class FruitTree {
   // Produce some mangoes
   produce () { 
     if (this.age >= this._mature) {
-      let random = Math.floor(Math.random()*5)
+      let random = Math.floor(Math.random()*5)+1
       for (let i = 0 ; i < random ; i++) {
-       let fruit = new Fruit()
+       let fruit = null
+       if (this._name === "mango") {
+         fruit = new Mango()
+       } else if (this._name === "apple") {
+         fruit = new Apple() 
+       } else if (this._name === "pear") {
+         fruit = new Pear() 
+       }
        this.fruits = fruit
       }
     }
