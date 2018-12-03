@@ -5,13 +5,16 @@ class MangoTree {
 
   // Initialize a new MangoTree
   constructor () {
-    this._quality = ''
     this._age = 0
     this._height = 0
     this._fruits = []
     this._healthStatus = true
     this._harvested = ''
-    this._matureAge = 2
+    this._matureAge = 3
+  }
+
+  get matureAge() {
+    return this._matureAge
   }
   
   get age() {
@@ -38,13 +41,16 @@ class MangoTree {
     return this._harvested
   }
 
+  set harvested(input) {
+    this._harvested = input
+  }
+
   // Get current states here
 
   // Grow the tree
   grow () {
     this._age++  
-    let maxHeight = 15
-    this._height
+    let maxHeight = 20
     let maxAge = 20
     if (this.age === maxAge) {
       this._healthStatus = false
@@ -57,7 +63,7 @@ class MangoTree {
   // Produce some mangoes
   produceMangoes () {
     let randomFruits = Math.floor(Math.random() * 10)
-    if (this.age >= this._matureAge) {
+    if (this.age >= this.matureAge) {
       for (let i = 0; i < randomFruits; i++) {
         this._fruits.push(new Mango())
       }
@@ -69,7 +75,6 @@ class MangoTree {
   harvest () {
     let countGood = 0
     let countBad = 0
-
     for (let i = 0; i < this.fruits.length; i++) {
       // console.log(this.fruits[i]);
       if (this.fruits[i].quality === 'good') {
@@ -78,10 +83,9 @@ class MangoTree {
         countBad++
       }
     }
-    this._harvested = `${this.fruits.length} (${countGood} good, ${countBad} bad)`
+    this.harvested = `${this.fruits.length} (${countGood} good, ${countBad} bad)`
     this._fruits = []
   }
-
 }
 
 class Mango {
@@ -96,7 +100,6 @@ class Mango {
     return this.quality
   }
 }
-
 
   // driver code untuk release 0
     let mangoTree = new MangoTree()
